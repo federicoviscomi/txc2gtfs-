@@ -1,0 +1,70 @@
+CONNECTED(000001C0)
+---
+Certificate chain
+ 0 s:C=UK, ST=United Kingdom, L=Guildford, O=Basemap, emailAddress=support@basemap.co.uk
+   i:C=UK, ST=United Kingdom, L=Guildford, O=Basemap, emailAddress=support@basemap.co.uk
+   a:PKEY: rsaEncryption, 1280 (bit); sigalg: RSA-SHA256
+   v:NotBefore: May  8 09:59:44 2025 GMT; NotAfter: May  8 09:59:44 2026 GMT
+-----BEGIN CERTIFICATE-----
+MIICmDCCAeGgAwIBAgIBADANBgkqhkiG9w0BAQsFADByMQswCQYDVQQGEwJVSzEX
+MBUGA1UECAwOVW5pdGVkIEtpbmdkb20xEjAQBgNVBAcMCUd1aWxkZm9yZDEQMA4G
+A1UECgwHQmFzZW1hcDEkMCIGCSqGSIb3DQEJARYVc3VwcG9ydEBiYXNlbWFwLmNv
+LnVrMB4XDTI1MDUwODA5NTk0NFoXDTI2MDUwODA5NTk0NFowcjELMAkGA1UEBhMC
+VUsxFzAVBgNVBAgMDlVuaXRlZCBLaW5nZG9tMRIwEAYDVQQHDAlHdWlsZGZvcmQx
+EDAOBgNVBAoMB0Jhc2VtYXAxJDAiBgkqhkiG9w0BCQEWFXN1cHBvcnRAYmFzZW1h
+cC5jby51azCBvzANBgkqhkiG9w0BAQEFAAOBrQAwgakCgaEAoQDIqvpmgIu/hl2p
+DzuM/wVPfexbcp0xFXg+DAdr8suRjs8wAoYpVWMuRvWzX0e39EeoYcVOS7R1YKcY
+Hcej6Pw+4MWQ4dPy9+50EZO1kfT5prAKrTGcUbAiQGbXxwX7YMuqPMf5Dhm4calX
+TmXGnzTmv0/zpZLOn3o1Bd6vd/oRGdsiuaTF8Wm22hgDAYAJ3KtDFSEa+9y2+VQ4
+u7YPdQIDAQABMA0GCSqGSIb3DQEBCwUAA4GhAI67R0qapN4vEno6K1vvA4D2t2VC
+1nafEBQmkVTUEahf4k1K5P4Nj+BFosbLbxXLm+zn/Eraf10vim5YGe5nMeGlIh0i
+Gq1Xe+aF4n5p9ipV/As5S+c0tQs4dHtngDigmsm3JURxUmYGtCH2jpZH9a1RCgAd
+agINXuNuU5PspMW9lgTLpgGVaE7O0sQu+/XHghwdrQ17bqVLz9kfG22bdNc=
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=C=UK, ST=United Kingdom, L=Guildford, O=Basemap, emailAddress=support@basemap.co.uk
+issuer=C=UK, ST=United Kingdom, L=Guildford, O=Basemap, emailAddress=support@basemap.co.uk
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA
+Server Temp Key: ECDH, prime256v1, 256 bits
+---
+SSL handshake has read 1357 bytes and written 473 bytes
+Verification error: EE certificate key too weak
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 1280 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 95DFB59B779AA74EEFD954691897A5245B175D09D7252DB6F3CFBB495CBC3F80
+    Session-ID-ctx: 
+    Master-Key: 22DF3AD1484B55F832D7557A148CEED69FCDFDCF86AD9DE11098C2F4B1AB844EE0041A871139C433838B943D0909229E
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 2000000000 (seconds)
+    TLS session ticket:
+    0000 - bd a5 34 71 20 a2 d7 eb-03 3f 56 bd 01 12 9b f7   ..4q ....?V.....
+    0010 - 66 7e 5c 67 74 2e b2 ac-dd 8b 18 4b 51 51 a7 c7   f~\gt......KQQ..
+    0020 - 40 b4 96 ee 95 84 0c 27-b7 2e 22 3f ae a3 46 9b   @......'.."?..F.
+    0030 - 98 ad 57 9a 2f 79 05 68-b7 70 7d b0 01 7f 5d ca   ..W./y.h.p}...].
+    0040 - b8 31 b5 f0 0c 93 48 e7-9c 86 5b 82 3e f5 4b b2   .1....H...[.>.K.
+    0050 - 79 1c 95 7e 30 41 26 ee-7d a6 ee 75 73 cd 34 99   y..~0A&.}..us.4.
+    0060 - db d2 9f 95 8c c0 f5 53-4c 7c f4 b0 ed d6 c3 58   .......SL|.....X
+    0070 - e2 82 b8 4f 9b 8c 29 67-60 e7 9d c6 ea f0 ba c8   ...O..)g`.......
+    0080 - 49 47 84 76 e5 bc 94 fd-bf cd f9 e0 34 9c 45 e1   IG.v........4.E.
+    0090 - 7a 61 54 eb 02 2b 2b ad-0c ba 1e 48 52 42 69 1a   zaT..++....HRBi.
+    00a0 - e7 15 55 a4 71 0d 32 f7-f2 2b 42 3a 74 eb 7a 09   ..U.q.2..+B:t.z.
+
+    Start Time: 1769888881
+    Timeout   : 7200 (sec)
+    Verify return code: 66 (EE certificate key too weak)
+    Extended master secret: no
+---

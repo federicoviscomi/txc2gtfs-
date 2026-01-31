@@ -1,18 +1,37 @@
-# Use Python slim image
-FROM python:3.12-slim
+FROM alpine:3.19
 
-# Set working directory
+# Install Go + dependencies
+RUN apk add --no-cache \
+    go \
+    bash \
+    ca-certificates \
+    openssl \
+    lftp \
+    git \
+    unzip
+
+# Add Basemap CA cert
+COPY basemap-ca.pem /usr/local/share/ca-certificates/basemap-ca.crt
+RUN update-ca-certificates
+
 WORKDIR /app
 
-# Copy requirements and install them
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy Go module files first
+COPY go.mod go.sum ./
 
-# Copy the converter script
-COPY main.py .
+# Download dependencies
+RUN go mod tidy
+RUN go get github.com/lib/pq@latest
 
-# Create a folder for input/output (mapped from host)
-RUN mkdir -p data/output
+# Copy source files
+COPY entrypoint.sh main.go ./
 
-# Default command
-CMD ["python", "main.py"]
+# Build Go binary
+RUN go build -o txc-loader main.go
+
+# Ensure entrypoint is executable
+RUN chmod +x entrypoint.sh txc-loader
+
+# Run entrypoint
+CMD ["./entrypoint.sh"]
+

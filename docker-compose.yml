@@ -11,7 +11,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U txc_user -d txc_db" ]
       interval: 5s
@@ -25,17 +25,14 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-
     environment:
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       POSTGRES_DB: txc_db
       POSTGRES_USER: txc_user
       POSTGRES_PASSWORD: txc_pass
+      FTP_USER: dasatil546@gamening.com
+      FTP_PASS: g6PNzqE9z97KL2B
     volumes:
       - ./data:/app/data
-    working_dir: /app
-    command: python main.py
 
-volumes:
-  pgdata:
