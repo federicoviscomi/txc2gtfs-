@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: txc_postgres
+    environment:
+      POSTGRES_USER: txc_user
+      POSTGRES_PASSWORD: txc_pass
+      POSTGRES_DB: txc_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U txc_user -d txc_db" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+  txc_loader:
+    build: .
+    container_name: txc_loader
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: txc_db
+      POSTGRES_USER: txc_user
+      POSTGRES_PASSWORD: txc_pass
+    volumes:
+      - ./data:/app/data
+    working_dir: /app
+    command: python main.py
+
+volumes:
+  pgdata:
